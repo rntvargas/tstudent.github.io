@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Hipótesis - T-Student</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.6/jstat.min.js" integrity="sha512-UK8MjH09aePxFAd8OwI5P4oP462OBBNGVh3OtnuHjybd0T3ArUbAseIuHpS1XfinmMXcCZG5barC+7SNPjuQtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Prueba de Hipótesis - T-Student (Muestras Dependientes)</h1>
+        <form id="hypothesis-form">
+            <label for="data-x">Datos Muestra 1 (X):</label>
+            <textarea id="data-x" rows="3" placeholder="Ejemplo: 5, 7, 8, 6, 7"></textarea>
+
+            <label for="data-y">Datos Muestra 2 (Y):</label>
+            <textarea id="data-y" rows="3" placeholder="Ejemplo: 4, 6, 7, 5, 6"></textarea>
+
+            <label for="alpha">Nivel de significancia (α):</label>
+            <input type="number" id="alpha" step="0.01" placeholder="0.05" required>
+
+            <label for="alternative">Hipótesis Alternativa (Hₐ):</label>
+            <select id="alternative">
+                <option value="left">Unilateral Izquierda (μ₁ - μ₂ < 0)</option>
+                <option value="right">Unilateral Derecha (μ₁ - μ₂ > 0)</option>
+                <option value="two-tailed">Bilateral (μ₁ - μ₂ ≠ 0)</option>
+            </select>
+
+            <label for="csv-upload">Cargar archivo CSV (opcional):</label>
+            <input type="file" id="csv-upload" accept=".csv">
+
+            <button type="button" id="calculate-btn">Calcular</button>
+        </form>
+
+        <div class="result">
+            <h2>Resultado</h2>
+            <p id="result-text"></p>
+        </div>
+
+        <canvas id="chart" width="400" height="200"></canvas>
+        
+        <button type="button" id="download-btn">Descargar Gráfico como Imagen</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
